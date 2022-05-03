@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class ClassCastExample {
 
-  public int foo() {
+  public int foo1() {
     Object a = new ArrayList<>();
     return ((String) a).length();
   }
