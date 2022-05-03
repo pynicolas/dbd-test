@@ -11,19 +11,10 @@ public class InfiniteRecursionExample {
     return num;
   }
 
-  public static void meth(A a) {
-    if (a instanceof A1) {
-      meth(a);
-    }
-    a.meth();
-  }
-
-  public static void meth2(boolean p) {
-    if (p) {
-      meth2(p);
-    } else {
-      meth2(p);
-    }
+  public static int allReachablePathsRecursive(boolean b) {
+    if (b) return allReachablePathsRecursive(!b); // Noncompliant
+    if (!b) return allReachablePathsRecursive(!b);
+    return 42; // Unreachable
   }
 
 }
