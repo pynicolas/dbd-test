@@ -17,4 +17,15 @@ public class UnsupportedOperationExample {
     }
   }
 
+
+  public List<String> getAllItems(List<String> paidItems) {
+    List<String> allItems = getOfferedItems();
+    allItems.addAll(paidItems);
+    return allItems;
+  }
+
+  private List<String> getOfferedItems() {
+    return Collections.singletonList("Our catalog");
+  }
+
 }
